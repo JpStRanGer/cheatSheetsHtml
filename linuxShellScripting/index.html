@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Shell Scripting Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Linux Shell Scripting Cheat Sheet</h1>
+        <button id="theme-switcher">Toggle Dark Mode</button>
+    </header>
+
+    <main>
+        <section class="accordion">
+            <h2 class="accordion-header">Basics</h2>
+            <div class="accordion-content">
+                <h3>Shebang</h3>
+                <pre><code># The first line of a script that specifies the interpreter
+#!/bin/bash</code></pre>
+
+                <h3>Comments</h3>
+                <pre><code># Single line comment
+
+: '
+Multiline comment
+spanning multiple lines
+'</code></pre>
+
+                <h3>Running a Script</h3>
+                <pre><code># Make the script executable
+chmod +x script.sh
+
+# Run the script
+./script.sh
+
+# Execute the script with bash
+bash script.sh</code></pre>
+            </div>
+        </section>
+
+        <section class="accordion">
+            <h2 class="accordion-header">Variables</h2>
+            <div class="accordion-content">
+                <h3>Defining Variables</h3>
+                <pre><code># Assign a value to a variable
+variable_name="value"
+
+# Read-only variable
+readonly variable_name="value"</code></pre>
+
+                <h3>Accessing Variables</h3>
+                <pre><code># Access the value of a variable
+echo $variable_name
+echo ${variable_name}  # Recommended for clarity</code></pre>
+
+                <h3>Special Variables</h3>
+                <pre><code># Script name
+$0
+
+# Positional parameters
+$1, $2, ...
+
+# Number of arguments
+$#
+
+# All arguments as separate words
+$@
+
+# All arguments as a single word
+$*
+
+# Exit status of the last command
+$?
+
+# Process ID of the script
+$$
+
+# Process ID of the last background command
+$!</code></pre>
+            </div>
+        </section>
+
+        <section class="accordion">
+            <h2 class="accordion-header">Control Structures</h2>
+            <div class="accordion-content">
+                <h3>If-Else</h3>
+                <pre><code>if [ condition ]; then
+    # Commands
+elif [ condition ]; then
+    # Commands
+else
+    # Commands
+fi</code></pre>
+
+                <h3>Case</h3>
+                <pre><code>case "$variable" in
+    "pattern1")
+        # Commands
+        ;;
+    "pattern2")
+        # Commands
+        ;;
+    *)
+        # Default commands
+        ;;
+esac</code></pre>
+
+                <h3>Loops</h3>
+                <pre><code>for i in {1..5}; do
+    echo "Iteration $i"
+done
+
+count=1
+while [ $count -le 5 ]; do
+    echo "Iteration $count"
+    count=$((count + 1))
+done</code></pre>
+            </div>
+        </section>
+
+        <!-- Add more sections as needed following the same structure -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Linux Shell Scripting Cheat Sheet</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
