@@ -1,0 +1,101 @@
+{
+  "categories": [
+    {
+      "id": "linux",
+      "name": "Linux",
+      "description": "Cheat sheet for sound system architecture in Linux",
+      "topics": [
+        {
+          "id": "sound-architecture",
+          "title": "Sound Architecture in Linux",
+          "content": [
+            {
+              "id": "sound-flow",
+              "title": "Sound Flow: From Binary Stream to Sound",
+              "description": "How sound data flows from the application to actual sound in speakers.",
+              "codeExamples": [],
+              "tips": [
+                "Sound is represented as a binary stream of digital data (0s and 1s) which is converted into sound waves by the sound card.",
+                "Digital data is buffered and processed in chunks before being played."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "alsa",
+          "title": "ALSA (Advanced Linux Sound Architecture)",
+          "content": [
+            {
+              "id": "what-is-alsa",
+              "title": "What is ALSA?",
+              "description": "ALSA provides kernel-level drivers and a user-space library for low-level communication with the sound card.",
+              "codeExamples": [],
+              "tips": [
+                "ALSA handles the core communication between the operating system and the sound card.",
+                "Applications can talk directly to ALSA for basic sound functionality, but more complex setups often use PulseAudio or PipeWire."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pulseaudio",
+          "title": "PulseAudio",
+          "content": [
+            {
+              "id": "what-is-pulseaudio",
+              "title": "What is PulseAudio?",
+              "description": "PulseAudio is a sound server that sits between ALSA and applications, offering advanced features like sound mixing and per-application volume control.",
+              "codeExamples": [],
+              "tips": [
+                "PulseAudio allows multiple programs to play sound at the same time and control volumes independently.",
+                "It also manages audio devices like headphones, speakers, and Bluetooth connections."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pipewire",
+          "title": "PipeWire",
+          "content": [
+            {
+              "id": "what-is-pipewire",
+              "title": "What is PipeWire?",
+              "description": "PipeWire is a modern alternative to PulseAudio, designed to handle both audio and video streams with better performance and lower latency.",
+              "codeExamples": [],
+              "tips": [
+                "PipeWire is designed for both audio and video streams, making it more future-proof for multimedia systems.",
+                "It can replace both PulseAudio and JACK for professional audio use."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "systemctl",
+          "title": "Using systemctl to Manage Sound Services",
+          "content": [
+            {
+              "id": "manage-sound-services",
+              "title": "Managing Sound Services with systemctl",
+              "description": "How to use systemctl to manage PulseAudio and PipeWire services on Linux.",
+              "codeExamples": [
+                {
+                  "description": "Check the status of PulseAudio",
+                  "code": "systemctl --user status pulseaudio"
+                },
+                {
+                  "description": "Restart PipeWire",
+                  "code": "systemctl --user restart pipewire"
+                }
+              ],
+              "tips": [
+                "Use systemctl with the --user flag to manage sound services that run per user.",
+                "PipeWire can be used as a drop-in replacement for PulseAudio, and systemctl can be used to switch between them."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

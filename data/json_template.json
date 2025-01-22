@@ -1,0 +1,89 @@
+{
+  "categories": [
+    {
+      "id": "css",
+      "name": "CSS",
+      "description": "Cheat sheet for CSS syntax, properties, and tips",
+      "topics": [
+        {
+          "id": "selectors",
+          "title": "CSS Selectors",
+          "content": [
+            {
+              "id": "basic-selectors",
+              "title": "Basic Selectors",
+              "description": "Common selectors like class, id, and element.",
+              "codeExamples": [
+                {
+                  "description": "Select element by class",
+                  "code": ".my-class { color: red; }"
+                },
+                {
+                  "description": "Select element by ID",
+                  "code": "#my-id { margin: 10px; }"
+                }
+              ],
+              "tips": [
+                "Use class selectors for reusable styles.",
+                "ID selectors should be unique per page."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "box-model",
+          "title": "CSS Box Model",
+          "content": [
+            {
+              "id": "box-properties",
+              "title": "Box Properties",
+              "description": "Explanation of margin, padding, and border.",
+              "codeExamples": [
+                {
+                  "description": "Add padding to an element",
+                  "code": "div { padding: 10px; }"
+                }
+              ],
+              "tips": [
+                "Margin is outside the element, padding is inside."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "description": "Cheat sheet for Linux commands and administration",
+      "topics": [
+        {
+          "id": "basic-commands",
+          "title": "Basic Commands",
+          "content": [
+            {
+              "id": "file-navigation",
+              "title": "File Navigation",
+              "description": "Commands to move around the filesystem.",
+              "codeExamples": [
+                {
+                  "description": "List files in a directory",
+                  "code": "ls -la"
+                },
+                {
+                  "description": "Change directory",
+                  "code": "cd /path/to/directory"
+                }
+              ],
+              "tips": [
+                "Use `ls -a` to see hidden files.",
+                "Use `cd ~` to quickly move to your home directory."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

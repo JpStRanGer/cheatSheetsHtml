@@ -1,0 +1,115 @@
+{
+  "categories": [
+    {
+      "id": "git",
+      "name": "Git",
+      "description": "Cheat sheet for Git commands and workflows",
+      "topics": [
+        {
+          "id": "interactive-staging",
+          "title": "Interactive Staging",
+          "content": [
+            {
+              "id": "staging-changes",
+              "title": "Staging Changes",
+              "description": "How to interactively stage changes for a commit.",
+              "codeExamples": [
+                {
+                  "description": "Start interactive staging",
+                  "code": "git add -p"
+                }
+              ],
+              "tips": [
+                "Use `s` to split hunks if needed.",
+                "Use `e` to manually edit the hunk before staging."
+              ]
+            },
+            {
+              "id": "unstage-hunk",
+              "title": "Unstage a Hunk",
+              "description": "How to unstage a previously staged hunk.",
+              "codeExamples": [
+                {
+                  "description": "Unstage a specific file",
+                  "code": "git reset <file>"
+                },
+                {
+                  "description": "Unstage everything",
+                  "code": "git reset"
+                },
+                {
+                  "description": "Interactive unstage",
+                  "code": "git reset -p"
+                }
+              ],
+              "tips": [
+                "Unstaging only affects the staging area; changes remain in the working directory."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "committing",
+          "title": "Committing Changes",
+          "content": [
+            {
+              "id": "commit-staged",
+              "title": "Commit Staged Changes",
+              "description": "How to commit changes that are staged.",
+              "codeExamples": [
+                {
+                  "description": "Commit the staged changes",
+                  "code": "git commit -m 'Commit message'"
+                }
+              ],
+              "tips": [
+                "Write clear, concise commit messages.",
+                "Commit small, logical changes to keep history clean."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "discard-changes",
+          "title": "Discard Changes",
+          "content": [
+            {
+              "id": "discard-unstaged",
+              "title": "Discard Unstaged Changes",
+              "description": "How to discard changes that haven’t been staged.",
+              "codeExamples": [
+                {
+                  "description": "Discard changes in a specific file",
+                  "code": "git restore <file>"
+                },
+                {
+                  "description": "Discard all unstaged changes",
+                  "code": "git restore ."
+                }
+              ],
+              "tips": [
+                "Be cautious when using `git restore`, as this cannot be undone.",
+                "Use `git diff` to review unstaged changes before discarding them."
+              ]
+            },
+            {
+              "id": "remove-untracked",
+              "title": "Remove Untracked Files",
+              "description": "How to remove untracked files and directories.",
+              "codeExamples": [
+                {
+                  "description": "Remove untracked files and directories",
+                  "code": "git clean -fd"
+                }
+              ],
+              "tips": [
+                "Use `git clean -n` to preview what will be deleted before running `-fd`."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

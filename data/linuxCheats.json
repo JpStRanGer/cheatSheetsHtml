@@ -1,0 +1,226 @@
+{
+  "categories": [
+    {
+      "id": "pipewire",
+      "name": "PipeWire",
+      "description": "Cheat sheet for controlling, configuring, and operating PipeWire",
+      "topics": [
+        {
+          "id": "basic-control",
+          "title": "Basic Control Commands",
+          "content": [
+            {
+              "id": "start-stop-restart",
+              "title": "Start, Stop, and Restart PipeWire",
+              "description": "Commands to start, stop, and restart PipeWire services.",
+              "codeExamples": [
+                {
+                  "description": "Start PipeWire",
+                  "code": "systemctl --user start pipewire"
+                },
+                {
+                  "description": "Stop PipeWire",
+                  "code": "systemctl --user stop pipewire"
+                },
+                {
+                  "description": "Restart PipeWire",
+                  "code": "systemctl --user restart pipewire"
+                },
+                {
+                  "description": "Check PipeWire status",
+                  "code": "systemctl --user status pipewire"
+                }
+              ],
+              "tips": [
+                "Always check the service status after starting or restarting to ensure it's running correctly."
+              ]
+            },
+            {
+              "id": "pulse-control",
+              "title": "PulseAudio Compatibility Control",
+              "description": "Commands for controlling PipeWire’s PulseAudio compatibility layer.",
+              "codeExamples": [
+                {
+                  "description": "Start PulseAudio Compatibility",
+                  "code": "systemctl --user start pipewire-pulse"
+                },
+                {
+                  "description": "Stop PulseAudio Compatibility",
+                  "code": "systemctl --user stop pipewire-pulse"
+                },
+                {
+                  "description": "Restart PulseAudio Compatibility",
+                  "code": "systemctl --user restart pipewire-pulse"
+                },
+                {
+                  "description": "Check PulseAudio Compatibility status",
+                  "code": "systemctl --user status pipewire-pulse"
+                }
+              ],
+              "tips": [
+                "Use `pipewire-pulse` to ensure older applications using PulseAudio work seamlessly."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "audio-device-management",
+          "title": "Managing Audio Devices",
+          "content": [
+            {
+              "id": "listing-devices",
+              "title": "Listing Devices",
+              "description": "How to list active audio devices using PipeWire.",
+              "codeExamples": [
+                {
+                  "description": "List devices with PipeWire CLI",
+                  "code": "pw-cli list-objects Node"
+                },
+                {
+                  "description": "List devices with WirePlumber",
+                  "code": "wpctl status"
+                }
+              ],
+              "tips": [
+                "Use `wpctl` for a simplified view of device status."
+              ]
+            },
+            {
+              "id": "setting-default-device",
+              "title": "Setting Default Device",
+              "description": "Set a default audio input or output device.",
+              "codeExamples": [
+                {
+                  "description": "Set default output device",
+                  "code": "wpctl set-default @DEFAULT_AUDIO_SINK@"
+                }
+              ],
+              "tips": [
+                "You can specify devices by their ID found using `wpctl status`."
+              ]
+            },
+            {
+              "id": "volume-control",
+              "title": "Volume Control",
+              "description": "Set volume for a specific audio device.",
+              "codeExamples": [
+                {
+                  "description": "Set volume to 50% for default sink",
+                  "code": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 50%"
+                }
+              ],
+              "tips": [
+                "Use percentages (e.g., 50%) for volume control."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "configuration",
+          "title": "PipeWire Configuration",
+          "content": [
+            {
+              "id": "config-file",
+              "title": "Configuring PipeWire",
+              "description": "How to customize PipeWire by editing configuration files.",
+              "codeExamples": [
+                {
+                  "description": "Copy configuration to user directory",
+                  "code": "cp /usr/share/pipewire/pipewire.conf ~/.config/pipewire/pipewire.conf"
+                },
+                {
+                  "description": "Edit the PipeWire config",
+                  "code": "nano ~/.config/pipewire/pipewire.conf"
+                }
+              ],
+              "tips": [
+                "Always restart PipeWire after making configuration changes."
+              ]
+            },
+            {
+              "id": "wireplumber-config",
+              "title": "Configuring WirePlumber",
+              "description": "Customizing WirePlumber, PipeWire’s session manager.",
+              "codeExamples": [
+                {
+                  "description": "Copy WirePlumber config to user directory",
+                  "code": "cp -r /usr/share/wireplumber ~/.config/wireplumber"
+                },
+                {
+                  "description": "Edit WirePlumber config",
+                  "code": "nano ~/.config/wireplumber/main.lua.d/50-alsa-config.lua"
+                }
+              ],
+              "tips": [
+                "WirePlumber manages audio devices and sessions, so customize this if you need fine control."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pavucontrol",
+          "title": "PulseAudio Tools with PipeWire",
+          "content": [
+            {
+              "id": "pavucontrol",
+              "title": "Using pavucontrol with PipeWire",
+              "description": "Graphical volume control for PipeWire through PulseAudio tools.",
+              "codeExamples": [
+                {
+                  "description": "Install pavucontrol",
+                  "code": "sudo dnf install pavucontrol"
+                },
+                {
+                  "description": "Launch pavucontrol",
+                  "code": "pavucontrol"
+                }
+              ],
+              "tips": [
+                "Useful for a more detailed, graphical view of audio sources and sinks."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "debugging",
+          "title": "Monitoring and Debugging",
+          "content": [
+            {
+              "id": "real-time-monitoring",
+              "title": "Real-Time Monitoring",
+              "description": "Monitor audio activity and performance.",
+              "codeExamples": [
+                {
+                  "description": "Monitor audio activity with PipeWire",
+                  "code": "pw-top"
+                }
+              ],
+              "tips": [
+                "Use this to see real-time usage of audio resources."
+              ]
+            },
+            {
+              "id": "verbose-logging",
+              "title": "Verbose Logging",
+              "description": "Enable verbose logging for troubleshooting.",
+              "codeExamples": [
+                {
+                  "description": "Verbose logging for PipeWire",
+                  "code": "PIPEWIRE_DEBUG=3 pipewire"
+                },
+                {
+                  "description": "Verbose logging for WirePlumber",
+                  "code": "WIREPLUMBER_DEBUG=3 wireplumber"
+                }
+              ],
+              "tips": [
+                "Use verbose logging when troubleshooting unexpected audio issues."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
